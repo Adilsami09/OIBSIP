@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Convert temperatures between Celsius, Fahrenheit, and Kelvin.">
+  <title>Thermo | Temperature Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="converter-card" aria-labelledby="page-title">
+      <div class="card-intro">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Precision utility</p>
+        <h1 id="page-title">Temperature,<br><em>translated.</em></h1>
+        <p class="intro-copy">Move between Celsius, Fahrenheit, and Kelvin without losing your bearings.</p>
+      </div>
+
+      <form id="converter-form" class="converter-form" novalidate>
+        <div class="input-row">
+          <div class="field-group value-field">
+            <label for="temperature">Temperature</label>
+            <div class="input-wrap">
+              <input id="temperature" name="temperature" type="number" inputmode="decimal" step="any" placeholder="0" aria-describedby="input-error">
+              <span class="input-symbol" aria-hidden="true">°</span>
+            </div>
+            <p id="input-error" class="field-message" role="alert"></p>
+          </div>
+
+          <div class="field-group unit-field">
+            <label for="input-unit">Input unit</label>
+            <div class="select-wrap">
+              <select id="input-unit" name="input-unit">
+                <option value="C">Celsius</option>
+                <option value="F">Fahrenheit</option>
+                <option value="K">Kelvin</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button class="convert-button" type="submit">
+          <span>Convert temperature</span>
+          <span class="button-arrow" aria-hidden="true">↗</span>
+        </button>
+      </form>
+
+      <section class="results" aria-live="polite" aria-atomic="true">
+        <div class="results-heading">
+          <span>Converted values</span>
+          <span class="results-line" aria-hidden="true"></span>
+        </div>
+        <div class="result-grid">
+          <article class="result-tile result-celsius">
+            <div class="result-label"><span class="result-icon">C</span><span>Celsius</span></div>
+            <strong id="celsius-result">--</strong><span class="unit-mark">°C</span>
+          </article>
+          <article class="result-tile result-fahrenheit">
+            <div class="result-label"><span class="result-icon">F</span><span>Fahrenheit</span></div>
+            <strong id="fahrenheit-result">--</strong><span class="unit-mark">°F</span>
+          </article>
+          <article class="result-tile result-kelvin">
+            <div class="result-label"><span class="result-icon">K</span><span>Kelvin</span></div>
+            <strong id="kelvin-result">--</strong><span class="unit-mark">K</span>
+          </article>
+        </div>
+      </section>
+
+      <p class="absolute-zero-note"><span aria-hidden="true">✦</span> Absolute zero is −273.15°C / 0K</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

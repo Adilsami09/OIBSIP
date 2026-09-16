@@ -1,0 +1,1 @@
+// No client-side behavior is needed for this static landing page.

@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap");
+
+:root {
+    --dark: #101820;
+    --card: #192731;
+    --cream: #f7f5ef;
+    --green: #b9ed82;
+    --muted: #9baab3;
+    --line: #dcded8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: var(--dark);
+    color: white;
+    padding: 6rem 1.5rem;
+    text-align: center;
+}
+
+.hero {
+    margin: auto;
+    max-width: 900px;
+}
+
+.profile-photo {
+    border: 6px solid var(--green);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(185, 237, 130, 0.25);
+    margin-bottom: 1.5rem;
+    width: 180px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Space Grotesk", sans-serif;
+    line-height: 1.15;
+}
+
+header h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    letter-spacing: -0.06em;
+}
+
+header h2 {
+    color: var(--green);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+section {
+    margin: auto;
+    max-width: 1000px;
+    padding: 6rem 1.5rem;
+}
+
+section h3 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+}
+
+#about p,
+#contact p {
+    color: #5e6d73;
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+#skills {
+    background: var(--dark);
+    color: white;
+    max-width: none;
+    padding-left: max(1.5rem, calc((100% - 1000px) / 2));
+    padding-right: max(1.5rem, calc((100% - 1000px) / 2));
+}
+
+#skills h3 {
+    color: white;
+}
+
+.skills-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.skill {
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--green);
+    font-weight: 700;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.skill:hover {
+    background: #243640;
+    transform: translateY(-5px);
+}
+
+#projects {
+    background: var(--cream);
+}
+
+.project-card {
+    border: 1px solid var(--line);
+    margin-bottom: 1rem;
+    padding: 2rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    box-shadow: 0 15px 35px rgba(16, 24, 32, 0.1);
+    transform: translateY(-5px);
+}
+
+.project-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.project-card p {
+    color: #65747a;
+    margin-bottom: 1rem;
+}
+
+.project-card a,
+.social-icons a {
+    color: #4f7830;
+    font-weight: 700;
+    margin-right: 1.5rem;
+    text-decoration: none;
+}
+
+.project-card a:hover,
+.social-icons a:hover {
+    color: var(--dark);
+    text-decoration: underline;
+}
+
+#contact {
+    background: var(--green);
+    max-width: none;
+    text-align: center;
+}
+
+#contact p {
+    color: var(--dark);
+    margin: 0.5rem auto;
+}
+
+.social-icons {
+    margin-top: 1.5rem;
+}
+
+footer {
+    background: var(--dark);
+    color: var(--muted);
+    padding: 1.5rem;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    header {
+        padding: 4rem 1.5rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 1.5rem;
+    }
+}
+
+.profile-card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 360px;
+  width: 100%;
+}
+
+.profile-card img {
+  aspect-ratio: 1 / 1;
+  border: 8px solid var(--green);
+  border-radius: 50%;
+  display: block;
+  height: 350px;
+  object-fit: cover;
+  object-position: center top;
+  width: 350px;
+}
+
+.profile-label {
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+  padding: 0.6rem 1rem;
+}
+
+.profile-label span {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.profile-label i {
+  background: var(--green);
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}
+
+@media (max-width: 750px) {
+  .profile-card img {
+    height: 280px;
+    width: 280px;
+  }
+}
